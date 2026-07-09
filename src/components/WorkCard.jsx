@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-export default function WorkCard({ work, onClick }) {
+export default function WorkCard({ work, onClick, className = "" }) {
   const videoRef = useRef(null);
   const hoveredRef = useRef(false);
   const [hovered, setHovered] = useState(false);
@@ -110,7 +110,7 @@ export default function WorkCard({ work, onClick }) {
 
   return (
     <article
-      className={`work-card ${hovered ? "hovered" : ""}`}
+      className={`work-card ${hovered ? "hovered" : ""} ${className}`}
       onClick={onClick}
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
@@ -131,10 +131,19 @@ export default function WorkCard({ work, onClick }) {
         onTimeUpdate={handleTimeUpdate}
       />
 
-      <div className="work-info">
-        <h3>
-          {work.title}
-          <span> · {work.year}</span>
+      <div className="work-title-overlay">
+        <h3 className="work-title-text">
+          {work.title.split("").map((char, index) => (
+            <span
+              key={index}
+              className="work-title-char"
+              style={{
+                transitionDelay: hovered ? `${index * 25}ms` : "0ms"
+              }}
+            >
+              {char === " " ? "\u00A0" : char}
+            </span>
+          ))}
         </h3>
       </div>
     </article>

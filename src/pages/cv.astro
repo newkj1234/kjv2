@@ -1,0 +1,252 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+
+const videoSrc = "/videos/works/work13.mp4";
+---
+
+<Layout>
+  <Header />
+  
+  <div class="cv-page">
+    <video
+      class="cv-bg-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+    >
+      <source src={`${videoSrc}#t=20`} type="video/mp4" />
+    </video>
+    <div class="cv-overlay"></div>
+
+    <main class="cv-container">
+      <div class="cv-content">
+        <header class="cv-header">
+          <h1>Kyung Jae Kim</h1>
+          <p class="cv-bio">(*1993, South Korea) lives and works in Saarbrücken, Germany.</p>
+        </header>
+
+        <section class="cv-section">
+          <h2>exhibitions</h2>
+          <ul class="cv-list">
+            <li>
+              <span class="cv-year">2022</span>
+              <span class="cv-desc"><strong>"Particles, Informations, Existance"</strong>, Weltkulturerbe Völklinger Hütte</span>
+            </li>
+            <li>
+              <span class="cv-year">2020</span>
+              <span class="cv-desc"><strong>"Sollbruchstellen"</strong>, Kunsthochschule Mainz</span>
+            </li>
+            <li>
+              <span class="cv-year">2020</span>
+              <span class="cv-desc"><strong>"EXPERIMANCE FESTIVAL"</strong>, Gallery Haus, Saarbrücken</span>
+            </li>
+            <li>
+              <span class="cv-year">2020</span>
+              <span class="cv-desc"><strong>"von wegen bis weilen"</strong> von_bis_, Saarbrücken</span>
+            </li>
+            <li>
+              <span class="cv-year">2020</span>
+              <span class="cv-desc"><strong>"von fallen bis leuchten"</strong> von_bis_, Saarbrücken</span>
+            </li>
+            <li>
+              <span class="cv-year">2020</span>
+              <span class="cv-desc"><strong>"rendezvous"</strong> deutsch-französischer Garten, Saarbrücken</span>
+            </li>
+            <li>
+              <span class="cv-year">2019</span>
+              <span class="cv-desc"><strong>"von jetzt bis oben"</strong> von_bis_, Saarbrücken</span>
+            </li>
+            <li>
+              <span class="cv-year">2019</span>
+              <span class="cv-desc"><strong>"Baum und Bild"</strong> deutsch-französischer Garten, Saarbrücken</span>
+            </li>
+            <li>
+              <span class="cv-year">2019</span>
+              <span class="cv-desc"><strong>"Kommune"</strong> RNSAD, Nancy</span>
+            </li>
+            <li>
+              <span class="cv-year">2019</span>
+              <span class="cv-desc"><strong>"Kaputt"</strong> hbksaar</span>
+            </li>
+          </ul>
+        </section>
+
+        <section class="cv-section">
+          <h2>education</h2>
+          <ul class="cv-list">
+            <li>
+              <span class="cv-year">2017-2022</span>
+              <span class="cv-desc">studies of fine art(Bachlor) at Hochschule der Bildenden Künste Saar</span>
+            </li>
+            <li>
+              <span class="cv-year">2012-2013</span>
+              <span class="cv-desc">studies of Media and Telecommunications at Dong-Ah Institute of media and Arts, Anseong, South Korea</span>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </main>
+  </div>
+</Layout>
+
+<style>
+  .cv-page {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    color: #fff;
+    overflow-x: hidden;
+  }
+
+  .cv-bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -2;
+  }
+
+  .cv-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    z-index: -1;
+  }
+
+  .cv-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 140px 32px 100px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cv-content {
+    animation: fadeIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .cv-header {
+    margin-bottom: 60px;
+  }
+
+  .cv-header h1 {
+    font-size: min(3.5rem, 10vw);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    line-height: 1.1;
+  }
+
+  .cv-bio {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 300;
+    max-width: 600px;
+  }
+
+  .cv-section {
+    margin-bottom: 50px;
+  }
+
+  .cv-section h2 {
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+  }
+
+  .cv-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .cv-list li {
+    display: flex;
+    margin-bottom: 16px;
+    line-height: 1.6;
+    font-size: 1.05rem;
+  }
+
+  .cv-year {
+    min-width: 120px;
+    flex-shrink: 0;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .cv-desc {
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .cv-desc strong {
+    font-weight: 500;
+    color: #fff;
+  }
+
+  @media (max-width: 640px) {
+    .cv-container {
+      padding: 100px 24px 60px;
+    }
+
+    .cv-list li {
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+
+    .cv-year {
+      margin-bottom: 4px;
+      font-size: 0.95rem;
+    }
+  }
+</style>
+
+<script>
+  const video = document.querySelector(".cv-bg-video");
+  if (video instanceof HTMLVideoElement) {
+    const handleTimeStart = () => {
+      if (video.currentTime < 20) {
+        video.currentTime = 20;
+      }
+    };
+
+    video.addEventListener("loadedmetadata", handleTimeStart);
+    video.addEventListener("timeupdate", () => {
+      if (video.currentTime < 20) {
+        video.currentTime = 20;
+      }
+    });
+
+    // Fallback if metadata is already loaded
+    if (video.readyState >= 1) {
+      handleTimeStart();
+    }
+  }
+</script>

@@ -11,10 +11,21 @@
   </header>
   <div class="menu-overlay">
     <nav class="menu-nav">
-      <a href="#">WORKS</a>
-      <a href="#">PUBLICATIONS</a>
-      <a href="#">CV</a>
-      <a href="#">CONTACT</a>
+      <a href="/">WORKS</a>
+      <a href="/publications">PUBLICATIONS</a>
+      <a href="/cv">CV</a>
+      <a href="/contact">CONTACT</a>
     </nav>
   </div>
 </div>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  if (toggle instanceof HTMLInputElement) {
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && toggle.checked) {
+        toggle.checked = false;
+      }
+    });
+  }
+</script>

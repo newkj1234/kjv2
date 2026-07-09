@@ -1,16 +1,16 @@
 ---
-const heroVideos = [
-  "/videos/hero1.mp4",
-  "/videos/hero2.mp4",
-  "/videos/hero3.mp4",
-  "/videos/hero4.mp4",
-  "/videos/hero5.mp4",
-];
-const hero = heroVideos[Math.floor(Math.random() * heroVideos.length)];
+const hero = "/videos/works/work13.mp4";
 ---
 
 <section class="hero">
-  <video class="hero-video" autoplay muted loop playsinline>
+  <video
+    class="hero-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+  >
     <source src={hero} type="video/mp4" />
   </video>
 </section>

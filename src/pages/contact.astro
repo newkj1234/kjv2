@@ -1,0 +1,454 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+
+const videoSrc = "/videos/works/work13.mp4";
+const email = "rudwo9312@gmail.com";
+---
+
+<Layout>
+  <Header />
+  
+  <div class="contact-page">
+    <video
+      class="contact-bg-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+    >
+      <source src={`${videoSrc}#t=20`} type="video/mp4" />
+    </video>
+    <div class="contact-overlay"></div>
+
+    <main class="contact-container">
+      <div class="contact-content">
+        <header class="contact-header">
+          <h1>Contact</h1>
+        </header>
+
+        <section class="contact-section">
+          <h2>Email</h2>
+          <p class="contact-email">
+            <a href={`mailto:${email}`}>{email}</a>
+          </p>
+        </section>
+
+        <section class="contact-accordion-section">
+          <!-- Privacy Policy Accordion -->
+          <details class="contact-details">
+            <summary>Datenschutzerklärung</summary>
+            <div class="details-content">
+              <p class="privacy-intro">
+                Der Schutz Ihrer personenbezogenen Daten ist mir ein wichtiges Anliegen. Diese Website verarbeitet personenbezogene Daten ausschließlich im Rahmen der geltenden Datenschutzgesetze, insbesondere der Datenschutz-Grundverordnung (DSGVO).
+              </p>
+              
+              <div class="legal-group">
+                <h3>Verantwortlicher</h3>
+                <p class="legal-name">Kyung Jae Kim</p>
+                <p>E-Mail: <a href={`mailto:${email}`}>{email}</a></p>
+              </div>
+
+              <div class="legal-group">
+                <h3>Zugriffsdaten</h3>
+                <p>
+                  Beim Besuch dieser Website werden durch den Hosting-Anbieter automatisch technische Informationen in sogenannten Server-Logfiles verarbeitet. Dazu können gehören:
+                </p>
+                <ul class="legal-bullet-list">
+                  <li>IP-Adresse</li>
+                  <li>Datum und Uhrzeit des Zugriffs</li>
+                  <li>Browsertyp und Browserversion</li>
+                  <li>Betriebssystem</li>
+                  <li>aufgerufene Seiten</li>
+                  <li>Referrer-URL (falls übermittelt)</li>
+                </ul>
+                <p>
+                  Diese Daten dienen ausschließlich der technischen Bereitstellung sowie der Sicherheit und Stabilität der Website und werden nicht mit anderen Datenquellen zusammengeführt.
+                </p>
+              </div>
+
+              <div class="legal-group">
+                <h3>Cookies</h3>
+                <p>Diese Website verwendet keine Cookies, die einer Einwilligung bedürfen.</p>
+              </div>
+
+              <div class="legal-group">
+                <h3>Analyse-Tools</h3>
+                <p>Auf dieser Website werden derzeit keine Analyse- oder Trackingdienste wie Google Analytics oder vergleichbare Dienste eingesetzt.</p>
+              </div>
+
+              <div class="legal-group">
+                <h3>Externe Inhalte</h3>
+                <p>
+                  Diese Website kann Inhalte oder Links zu externen Websites enthalten (z. B. Vimeo, YouTube oder Instagram). Beim Aufruf solcher Inhalte gelten die Datenschutzbestimmungen des jeweiligen Anbieters.
+                </p>
+              </div>
+
+              <div class="legal-group">
+                <h3>Ihre Rechte</h3>
+                <p>Sie haben nach der DSGVO insbesondere das Recht auf:</p>
+                <ul class="legal-bullet-list">
+                  <li>Auskunft,</li>
+                  <li>Berichtigung,</li>
+                  <li>Löschung,</li>
+                  <li>Einschränkung der Verarbeitung,</li>
+                  <li>Datenübertragbarkeit sowie</li>
+                  <li>Widerspruch gegen die Verarbeitung Ihrer personenbezogenen Daten.</li>
+                </ul>
+                <p>Außerdem haben Sie das Recht, sich bei einer Datenschutzaufsichtsbehörde zu beschweren.</p>
+              </div>
+
+              <div class="legal-group">
+                <h3>Änderungen</h3>
+                <p>Diese Datenschutzerklärung kann angepasst werden, wenn sich technische oder rechtliche Änderungen ergeben.</p>
+                <p class="privacy-stand">Stand: Juli 2026</p>
+              </div>
+            </div>
+          </details>
+
+          <!-- Imprint Accordion -->
+          <details class="contact-details">
+            <summary>Impressum</summary>
+            <div class="details-content">
+              <div class="legal-group">
+                <h3>Angaben gemäß § 5 DDG</h3>
+                <p class="legal-name">Kyung Jae Kim</p>
+                <p class="legal-address">
+                  Deutschherrnstraße 7,<br />
+                  66117 Saarbrücken,<br />
+                  Deutschland
+                </p>
+                <p>E-Mail: <a href={`mailto:${email}`}>{email}</a></p>
+              </div>
+
+              <div class="legal-group">
+                <h3>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h3>
+                <p class="legal-name">Kyung Jae Kim</p>
+                <p class="legal-address">
+                  Deutschherrnstraße 7,<br />
+                  66117 Saarbrücken,<br />
+                  Deutschland
+                </p>
+              </div>
+
+              <div class="legal-group">
+                <h3>Haftung für Inhalte</h3>
+                <p>
+                  Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden.
+                </p>
+              </div>
+
+              <div class="legal-group">
+                <h3>Haftung für Links</h3>
+                <p>
+                  Diese Website enthält Links zu externen Websites Dritter. Für deren Inhalte sind ausschließlich deren Betreiber verantwortlich.
+                </p>
+              </div>
+
+              <div class="legal-group">
+                <h3>Urheberrecht</h3>
+                <p>
+                  Alle auf dieser Website veröffentlichten Inhalte, insbesondere Texte, Fotografien, Videos, Grafiken und sonstige Werke, unterliegen dem Urheberrecht, sofern nicht anders angegeben. Eine Vervielfältigung oder Verwendung ist ohne vorherige schriftliche Zustimmung nicht gestattet.
+                </p>
+              </div>
+
+              <div class="legal-group">
+                <h3>Bildnachweise</h3>
+                <p>Alle Bilder, Fotografien und Videos stammen – sofern nicht anders angegeben – von Kyung Jae Kim.</p>
+              </div>
+            </div>
+          </details>
+        </section>
+      </div>
+    </main>
+  </div>
+</Layout>
+
+<style>
+  .contact-page {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    color: #fff;
+    overflow-x: hidden;
+  }
+
+  .contact-bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -2;
+  }
+
+  .contact-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    z-index: -1;
+  }
+
+  .contact-container {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 140px 32px 100px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .contact-content {
+    animation: fadeIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .contact-header {
+    margin-bottom: 60px;
+  }
+
+  .contact-header h1 {
+    font-size: min(3.5rem, 10vw);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    line-height: 1.1;
+  }
+
+  .contact-section {
+    margin-bottom: 50px;
+  }
+
+  .contact-section h2 {
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 18px;
+  }
+
+  .contact-email {
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+  }
+
+  .contact-email a {
+    color: #fff;
+    text-decoration: none;
+    transition: opacity 0.35s ease, color 0.35s ease;
+    background: linear-gradient(90deg,
+        rgba(71, 120, 255, 1) 0%,
+        rgba(39, 201, 255, 1) 30%,
+        rgba(179, 88, 255, 1) 70%,
+        rgba(255, 126, 223, 1) 100%
+    );
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+  }
+
+  .contact-email a:hover {
+    animation: gradient-wave 1.2s ease infinite;
+    opacity: 0.9;
+  }
+
+  @keyframes gradient-wave {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .contact-accordion-section {
+    margin-top: 60px;
+  }
+
+  /* Interactive Details Accordion */
+  .contact-details {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .contact-details summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+    padding: 18px 0;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.85);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    list-style: none;
+    transition: color 0.3s ease, border-color 0.3s ease;
+  }
+
+  .contact-details summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .contact-details summary:hover {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+
+  .contact-details summary::after {
+    content: "+";
+    font-family: system-ui, sans-serif;
+    font-size: 1.35rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.6);
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .contact-details[open] summary::after {
+    transform: rotate(45deg);
+    color: #fff;
+  }
+
+  .contact-details[open] summary {
+    border-bottom: 1px solid transparent;
+  }
+
+  .details-content {
+    padding: 24px 0 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    animation: slideDown 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Styling content inside dropdowns */
+  .privacy-intro {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 30px;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .legal-group {
+    margin-bottom: 30px;
+    line-height: 1.6;
+    font-size: 0.98rem;
+    font-weight: 300;
+  }
+
+  .legal-group:last-child {
+    margin-bottom: 0;
+  }
+
+  .legal-group h3 {
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin-bottom: 12px;
+    color: #fff;
+  }
+
+  .legal-name {
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+
+  .legal-address {
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 8px;
+  }
+
+  .legal-group a {
+    color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: opacity 0.3s ease;
+  }
+
+  .legal-group a:hover {
+    opacity: 0.8;
+  }
+
+  .legal-bullet-list {
+    margin: 12px 0 16px 20px;
+    padding: 0;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .legal-bullet-list li {
+    margin-bottom: 6px;
+    font-weight: 300;
+  }
+
+  .privacy-stand {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin-top: 10px;
+    font-weight: 300;
+  }
+
+  @media (max-width: 640px) {
+    .contact-container {
+      padding: 100px 24px 60px;
+    }
+
+    .contact-email {
+      font-size: 1.45rem;
+    }
+  }
+</style>
+
+<script>
+  const video = document.querySelector(".contact-bg-video");
+  if (video instanceof HTMLVideoElement) {
+    const handleTimeStart = () => {
+      if (video.currentTime < 20) {
+        video.currentTime = 20;
+      }
+    };
+
+    video.addEventListener("loadedmetadata", handleTimeStart);
+    video.addEventListener("timeupdate", () => {
+      if (video.currentTime < 20) {
+        video.currentTime = 20;
+      }
+    });
+
+    if (video.readyState >= 1) {
+      handleTimeStart();
+    }
+  }
+</script>

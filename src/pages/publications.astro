@@ -1,0 +1,413 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+
+const videoSrc = "/videos/works/work13.mp4";
+---
+
+<Layout>
+  <Header />
+  
+  <div class="publications-page">
+    <video
+      class="pub-bg-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+    >
+      <source src={`${videoSrc}#t=20`} type="video/mp4" />
+    </video>
+    <div class="pub-overlay"></div>
+
+    <main class="pub-container">
+      <header class="pub-page-header">
+        <h1>Publications</h1>
+      </header>
+
+      <div class="pub-content">
+        <!-- Publication 1: Being-in-the-World -->
+        <article class="pub-item">
+          <header class="pub-item-header">
+            <h2 class="pub-title">Being-in-the-World</h2>
+            <p class="pub-subtitle">Bachelorarbeit in freier Kunst</p>
+          </header>
+          <div class="pub-grid cols-3">
+            <div class="pub-image-wrapper">
+              <img
+                src="/publication/BA/BA1.png"
+                alt="Being-in-the-World - Bachelorarbeit 1"
+                class="pub-image"
+                loading="lazy"
+              />
+            </div>
+            <div class="pub-image-wrapper">
+              <img
+                src="/publication/BA/BA2.png"
+                alt="Being-in-the-World - Bachelorarbeit 2"
+                class="pub-image"
+                loading="lazy"
+              />
+            </div>
+            <div class="pub-image-wrapper">
+              <img
+                src="/publication/BA/BA3.png"
+                alt="Being-in-the-World - Bachelorarbeit 3"
+                class="pub-image"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </article>
+
+        <!-- Publication 2: Das Netzwerk der Klangkunst -->
+        <article class="pub-item">
+          <header class="pub-item-header">
+            <h2 class="pub-title">Das Netzwerk der Klangkunst</h2>
+            <p class="pub-subtitle">서울문화재단, 문래예술공장</p>
+          </header>
+          <div class="pub-grid cols-4">
+            <div class="pub-image-wrapper">
+              <img
+                src="/publication/MU/MU1.png"
+                alt="Das Netzwerk der Klangkunst - 문래예술공장 1"
+                class="pub-image"
+                loading="lazy"
+              />
+            </div>
+            <div class="pub-image-wrapper">
+              <img
+                src="/publication/MU/MU2.png"
+                alt="Das Netzwerk der Klangkunst - 문래예술공장 2"
+                class="pub-image"
+                loading="lazy"
+              />
+            </div>
+            <div class="pub-image-wrapper">
+              <img
+                src="/publication/MU/MU3.jpg"
+                alt="Das Netzwerk der Klangkunst - 문래예술공장 3"
+                class="pub-image"
+                loading="lazy"
+              />
+            </div>
+            <div class="pub-image-wrapper">
+              <img
+                src="/publication/MU/MU4.jpg"
+                alt="Das Netzwerk der Klangkunst - 문래예술공장 4"
+                class="pub-image"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="pub-lightbox" aria-hidden="true" role="dialog">
+      <button class="lightbox-close" aria-label="Close image">&times;</button>
+      <div class="lightbox-wrapper">
+        <img class="lightbox-content" id="pub-lightbox-img" src="" alt="Enlarged publication preview" />
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .publications-page {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    color: #fff;
+    overflow-x: hidden;
+  }
+
+  .pub-bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -2;
+  }
+
+  .pub-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    z-index: -1;
+  }
+
+  .pub-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 140px 32px 100px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .pub-page-header {
+    margin-bottom: 60px;
+    animation: fadeIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  .pub-page-header h1 {
+    font-size: min(3.5rem, 10vw);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    line-height: 1.1;
+  }
+
+  .pub-content {
+    animation: fadeIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .pub-item {
+    margin-bottom: 80px;
+  }
+
+  .pub-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .pub-item-header {
+    margin-bottom: 24px;
+  }
+
+  .pub-title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+
+  .pub-subtitle {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.55);
+    font-weight: 300;
+  }
+
+  /* Responsive image grid */
+  .pub-grid {
+    display: grid;
+    gap: 16px;
+  }
+
+  .pub-grid.cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pub-grid.cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .pub-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    background: rgba(255, 255, 255, 0.03);
+    cursor: zoom-in;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: border-color 0.35s ease;
+  }
+
+  .pub-image-wrapper:hover {
+    border-color: rgba(255, 255, 255, 0.35);
+  }
+
+  .pub-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .pub-image-wrapper:hover .pub-image {
+    transform: scale(1.04);
+  }
+
+  /* Fullscreen Lightbox Modal */
+  .lightbox {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out;
+  }
+
+  .lightbox.active {
+    display: flex;
+  }
+
+  .lightbox-wrapper {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .lightbox-content {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    animation: zoomIn 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 42px;
+    font-weight: 300;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s, transform 0.3s;
+    z-index: 10010;
+  }
+
+  .lightbox-close:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  /* Responsive breakpoints */
+  @media (max-width: 868px) {
+    .pub-grid.cols-3,
+    .pub-grid.cols-4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .pub-container {
+      padding: 100px 24px 60px;
+    }
+
+    .pub-grid.cols-3,
+    .pub-grid.cols-4 {
+      grid-template-columns: 1fr;
+    }
+    
+    .pub-image-wrapper {
+      aspect-ratio: 3/4;
+    }
+
+    .lightbox-close {
+      top: 24px;
+      right: 24px;
+      font-size: 32px;
+    }
+  }
+</style>
+
+<script>
+  const video = document.querySelector(".pub-bg-video");
+  if (video instanceof HTMLVideoElement) {
+    const handleTimeStart = () => {
+      if (video.currentTime < 20) {
+        video.currentTime = 20;
+      }
+    };
+
+    video.addEventListener("loadedmetadata", handleTimeStart);
+    video.addEventListener("timeupdate", () => {
+      if (video.currentTime < 20) {
+        video.currentTime = 20;
+      }
+    });
+
+    if (video.readyState >= 1) {
+      handleTimeStart();
+    }
+  }
+
+  // Lightbox functionality
+  const lightbox = document.getElementById("pub-lightbox");
+  const lightboxImg = document.getElementById("pub-lightbox-img") as HTMLImageElement;
+  const closeBtn = document.querySelector(".lightbox-close");
+  const imageWrappers = document.querySelectorAll(".pub-image-wrapper");
+
+  if (lightbox && lightboxImg) {
+    imageWrappers.forEach(wrapper => {
+      wrapper.addEventListener("click", () => {
+        const img = wrapper.querySelector("img");
+        const src = img?.getAttribute("src");
+        if (src) {
+          lightboxImg.src = src;
+          lightbox.classList.add("active");
+          lightbox.setAttribute("aria-hidden", "false");
+          document.body.style.overflow = "hidden";
+        }
+      });
+    });
+
+    const closeLightbox = () => {
+      lightbox.classList.remove("active");
+      lightbox.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+      setTimeout(() => {
+        lightboxImg.src = ""; // Clear source to free memory
+      }, 350);
+    };
+
+    // Close on click anywhere outside or on close btn
+    lightbox.addEventListener("click", (e) => {
+      if (e.target !== lightboxImg) {
+        closeLightbox();
+      }
+    });
+
+    if (closeBtn) {
+      closeBtn.addEventListener("click", closeLightbox);
+    }
+
+    // Esc key close
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && lightbox.classList.contains("active")) {
+        closeLightbox();
+      }
+    });
+  }
+</script>

@@ -8,6 +8,7 @@ export default function WorkCard({ work, onClick, className = "" }) {
   const previewStart = work.previewStart ?? 10;
   const previewEnd = work.previewEnd ?? 20;
   const playRequestRef = useRef(null);
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -16,7 +17,30 @@ export default function WorkCard({ work, onClick, className = "" }) {
     video.muted = true;
     video.playsInline = true;
     video.preload = "auto";
-  }, []);
+
+    const setStart = () => {
+      video.currentTime = previewStart;
+    };
+
+    const handleSeeked = () => {
+      setVideoLoaded(true);
+    };
+
+    video.addEventListener("loadedmetadata", setStart, { once: true });
+    video.addEventListener("seeked", handleSeeked, { once: true });
+
+    if (video.readyState >= 2) {
+      video.currentTime = previewStart;
+      setVideoLoaded(true);
+    } else if (video.readyState === 1) {
+      setStart();
+    }
+
+    return () => {
+      video.removeEventListener("loadedmetadata", setStart);
+      video.removeEventListener("seeked", handleSeeked);
+    };
+  }, [previewStart]);
 
   const seekPreviewStart = (video) => {
     if (!video) return;
@@ -33,7 +57,6 @@ export default function WorkCard({ work, onClick, className = "" }) {
 
     video.muted = true;
     video.preload = "auto";
-    seekPreviewStart(video);
 
     if (playRequestRef.current) {
       playRequestRef.current = null;
@@ -95,8 +118,6 @@ export default function WorkCard({ work, onClick, className = "" }) {
     } catch {
       // ignore pause errors
     }
-
-    seekPreviewStart(video);
   };
 
   const handleTimeUpdate = () => {
@@ -118,13 +139,13 @@ export default function WorkCard({ work, onClick, className = "" }) {
       <img
         src={work.poster}
         alt={work.title}
-        className={`work-poster ${hovered ? "hide" : ""}`}
+        className={`work-poster ${videoLoaded ? "hide" : ""}`}
       />
 
       <video
         ref={videoRef}
         src={work.video}
-        className={`work-video ${hovered ? "show" : ""}`}
+        className={`work-video ${videoLoaded ? "show" : ""}`}
         muted
         playsInline
         preload="auto"
@@ -138,7 +159,7 @@ export default function WorkCard({ work, onClick, className = "" }) {
               key={index}
               className="work-title-char"
               style={{
-                transitionDelay: hovered ? `${index * 25}ms` : "0ms"
+                animationDelay: hovered ? `${index * 6}ms` : "0ms"
               }}
             >
               {char === " " ? "\u00A0" : char}

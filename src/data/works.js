@@ -1,92 +1,92 @@
 const works = [
 
-{
+  {
 
-  id: 1,
+    id: 1,
 
-  title: "Der Knoten",
+    title: "Der Knoten",
 
-  year: 2017,
+    year: 2017,
 
-  medium: "Performance",
+    medium: "Performance",
 
-  venue: "Koreanische Oper, Berlin",
+    venue: "Koreanische Oper, Berlin",
 
-  text: `aus wessen verstorbenen Gauners zerplazten Hodensack kamst du hervor, du Geist?
+    text: `aus wessen verstorbenen Gauners zerplazten Hodensack kamst du hervor, du Geist?
 
 Iss und geh fort, ich tu dasselbe.`,
 
-  materials: [
+    materials: [
 
-    "Dancer — Soomin Chae",
+      "Dancer — Soomin Chae",
 
-    "Music — Dream Like Fantasy — Sol Daniel Kim, Dayong Yoon",
+      "Music — Dream Like Fantasy — Sol Daniel Kim, Dayong Yoon",
 
-    "Pagyeong — Hyunjin Baik",
+      "Pagyeong — Hyunjin Baik",
 
-  ],
+    ],
 
-  collaborators: [],
+    collaborators: [],
 
-  poster: "/images/works/work01.jpeg",
+    poster: "/images/works/work01.jpeg",
 
-  video: "/videos/works/work01.mp4",
+    video: "/videos/works/work01.mp4",
 
-  previewStart: 15,
+    previewStart: 15,
 
-  previewEnd: 30,
+    previewEnd: 35,
 
-},
+  },
 
   {
 
-  id: 2,
+    id: 2,
 
-  title: "Schalltropfen",
+    title: "Schalltropfen",
 
-  year: 2018,
+    year: 2018,
 
-  medium: "Rauminstallation",
+    medium: "Rauminstallation",
 
-  venue: 'RNSAD "Kommune", Nancy',
+    venue: 'RNSAD "Kommune", Nancy',
 
-  text: `Die Tropfen wurden aufgezeichnet und ihrer ursprünglichen Funktion entzogen. Aus ihrem gleichförmigen Rhythmus entstand eine Komposition, die Regelmäßigkeit in Unvorhersehbarkeit übersetzt.
+    text: `Die Tropfen wurden aufgezeichnet und ihrer ursprünglichen Funktion entzogen. Aus ihrem gleichförmigen Rhythmus entstand eine Komposition, die Regelmäßigkeit in Unvorhersehbarkeit übersetzt.
 
 Die Partitur liegt auf dem Lautsprecher aus, während die Komposition den Raum besetzt.`,
 
-  materials: [
+    materials: [
 
-    "Tivoli Audio Model One Radio",
+      "Tivoli Audio Model One Radio",
 
-    "Zwei Partituren",
+      "Zwei Partituren",
 
-  ],
+    ],
 
-  collaborators: [],
+    collaborators: [],
 
-  poster: "/images/works/work02.jpeg",
+    poster: "/images/works/work02.jpeg",
 
-  video: "/videos/works/work02.mp4",
+    video: "/videos/works/work02.mp4",
 
-  previewStart: 20,
+    previewStart: 20,
 
-  previewEnd: 40,
+    previewEnd: 35,
 
-},
+  },
 
   {
 
-  id: 3,
+    id: 3,
 
-  title: "Onomatopoetikon",
+    title: "Onomatopoetikon",
 
-  year: 2019,
+    year: 2019,
 
-  medium: "Videoinstallation",
+    medium: "Videoinstallation",
 
-  venue: "HBKsaar, Saarbrücken",
+    venue: "HBKsaar, Saarbrücken",
 
-  text: `Singt ein Lied so süß gelinde,
+    text: `Singt ein Lied so süß gelinde,
 
 Wie die Quellen auf den Kieseln,
 
@@ -94,373 +94,373 @@ Wie die Bienen um die Linde
 
 Summen, murmeln, flüstern, rieseln.`,
 
-  materials: [
+    materials: [
 
-    "Einkanal-Videoprojektion",
+      "Einkanal-Videoprojektion",
 
-    "Ton",
+      "Ton",
 
-  ],
+    ],
 
-  collaborators: [],
+    collaborators: [],
 
-  poster: "/images/works/work03.jpeg",
+    poster: "/images/works/work03.jpeg",
 
-  video: "/videos/works/work03.mp4",
+    video: "/videos/works/work03.mp4",
 
-  previewStart: 15,
+    previewStart: 19,
 
-  previewEnd: 30,
+    previewEnd: 34,
 
-},
+  },
 
   {
 
-  id: 4,
+    id: 4,
 
-  title: "Baum und Leben",
+    title: "Baum und Leben",
 
-  year: 2019,
+    year: 2019,
 
-  medium: "Rauminstallation",
+    medium: "Rauminstallation",
 
-  venue: "Deutsch-Französischer Garten, Saarbrücken",
+    venue: "Deutsch-Französischer Garten, Saarbrücken",
 
-  text: `Für jemanden mit nicht aufgeweichtem Geist, unangefochtenem Gewahrsein,
+    text: `Für jemanden mit nicht aufgeweichtem Geist, unangefochtenem Gewahrsein,
 
 der inneren Reichtum und Schaden aufgibt, wach ist, gibt es keine Gefahr, keine Furcht.
 
 (Dhammapada 39)`,
 
-  materials: [
+    materials: [
 
-    "Videoprojektion",
+      "Videoprojektion",
 
-    "Ton",
+      "Ton",
 
-  ],
+    ],
 
-  collaborators: [],
+    collaborators: [],
 
-  poster: "/images/works/work04.jpeg",
+    poster: "/images/works/work04.jpeg",
 
-  video: "/videos/works/work04.mp4",
+    video: "/videos/works/work04.mp4",
 
-  previewStart: 15,
+    previewStart: 20,
 
-  previewEnd: 30,
+    previewEnd: 35,
 
-},
+  },
 
- {
+  {
 
-  id: 5,
+    id: 5,
 
-  title: "Hausgott",
+    title: "Hausgott",
 
-  year: 2019,
+    year: 2019,
 
-  medium: "Rauminstallation",
+    medium: "Rauminstallation",
 
-  venue: 'Ausstellung "von jetzt bis oben", Saarbrücken',
+    venue: 'Ausstellung "von jetzt bis oben", Saarbrücken',
 
-  text: `In my culture, we believe that there are gods who guard every part of the house, called Gashin (household gods).
+    text: `In my culture, we believe that there are gods who guard every part of the house, called Gashin (household gods).
 
 The creaks of the floor are the vitality of these gods greeting us.
 
 There is nothing but invisible things, and sounds are always with us.`,
 
-  materials: [
+    materials: [
 
-    "Interaktive Bodeninstallation",
+      "Interaktive Bodeninstallation",
 
-    "Klang",
+      "Klang",
 
-  ],
+    ],
 
-  collaborators: [],
+    collaborators: [],
 
-  poster: "/images/works/work05.jpeg",
+    poster: "/images/works/work05.jpeg",
 
-  video: "/videos/works/work05.mp4",
+    video: "/videos/works/work05.mp4",
 
-  previewStart: 15,
+    previewStart: 15,
 
-  previewEnd: 30,
+    previewEnd: 30,
 
-},
+  },
 
-{
+  {
 
-  id: 6,
+    id: 6,
 
-  title: "Der Knoten",
+    title: "Der Knoten",
 
-  year: 2020,
+    year: 2020,
 
-  medium: "Rauminstallation",
+    medium: "Rauminstallation",
 
-  venue: "Ausstellung rendezvous, Deutsch-Französischer Garten, Saarbrücken",
+    venue: "Ausstellung rendezvous, Deutsch-Französischer Garten, Saarbrücken",
 
-  text: `Lasst uns Körper und Seele mit Wasser waschen.
+    text: `Lasst uns Körper und Seele mit Wasser waschen.
 
 (Lavons-nous donc, corps et âme, avec de l’eau.)`,
 
-  materials: [
+    materials: [
 
-    "Videoprojektion",
+      "Videoprojektion",
 
-    "Ton",
+      "Ton",
 
-  ],
+    ],
 
-  collaborators: [],
+    collaborators: [],
 
-  poster: "/images/works/work06.jpeg",
+    poster: "/images/works/work06.jpeg",
 
-  video: "/videos/works/work06.mp4",
+    video: "/videos/works/work06.mp4",
 
-  previewStart: 15,
+    previewStart: 15,
 
-  previewEnd: 30,
+    previewEnd: 30,
 
-},
+  },
 
-{
+  {
 
-  id: 7,
+    id: 7,
 
-  title: "Delayed Choice",
+    title: "Delayed Choice",
 
-  year: 2020,
+    year: 2020,
 
-  medium: "Videoinstallation",
+    medium: "Videoinstallation",
 
-  venue: "Ausstellung von wegen bis weilen, Saarbrücken",
+    venue: "Ausstellung von wegen bis weilen, Saarbrücken",
 
-  text: `Nur Schwanz und Kopf des Drachens sind gut auszumachen. Dass der Drachenschwanz in der Photonenquelle steckt, ist ebenso klar wie das Zubeißen des Drachenmauls im Detektor am Ende des Weges. Dazwischen ist nur Rauch.
+    text: `Nur Schwanz und Kopf des Drachens sind gut auszumachen. Dass der Drachenschwanz in der Photonenquelle steckt, ist ebenso klar wie das Zubeißen des Drachenmauls im Detektor am Ende des Weges. Dazwischen ist nur Rauch.
 
 (John A. Wheeler, *Law without Law*, in: *Quantum Theory and Measurement*, 1983)`,
 
-  materials: [
+    materials: [
 
-    "Videoprojektion",
+      "Videoprojektion",
 
-    "Ton",
+      "Ton",
 
-  ],
+    ],
 
-  collaborators: [
+    collaborators: [
 
-    "Juho Lee",
+      "Juho Lee",
 
-  ],
+    ],
 
-  poster: "/images/works/work07.jpeg",
+    poster: "/images/works/work07.jpeg",
 
-  video: "/videos/works/work07.mp4",
+    video: "/videos/works/work07.mp4",
 
-  previewStart: 15,
+    previewStart: 0,
 
-  previewEnd: 30,
+    previewEnd: 30,
 
-},
-
-{
-
-  id: 8,
-
-  title: "Schlaflied",
-
-  year: 2020,
-
-  medium: "Rauminstallation",
-
-  venue: 'Ausstellung "von fallen bis leuchten", Saarbrücken',
-
-  text: `Wir fallen, fallen, fallen und leuchten.`,
-
-  materials: [
-
-    "Toninstallation",
-
-    "Licht",
-
-  ],
-
-  collaborators: [],
-
-  poster: "/images/works/work08.jpeg",
-
-  video: "/videos/works/work08.mp4",
-
-  previewStart: 15,
-
-  previewEnd: 30,
-
-},
+  },
 
   {
 
-  id: 9,
+    id: 8,
 
-  title: "The Rose of Sharon Blooms Again",
+    title: "Schlaflied",
 
-  year: 2021,
+    year: 2020,
 
-  medium: "Videoinstallation",
+    medium: "Rauminstallation",
 
-  venue: "Saarbrücken",
+    venue: 'Ausstellung "von fallen bis leuchten", Saarbrücken',
 
-  text: `Beeinflussen wir uns wirklich gegenseitig?`,
+    text: `Wir fallen, fallen, fallen und leuchten.`,
 
-  materials: [
+    materials: [
 
-    "Videoprojektion",
+      "Toninstallation",
 
-    "Ton",
+      "Licht",
 
-  ],
+    ],
 
-  collaborators: [
+    collaborators: [],
 
-    "Juho Lee",
+    poster: "/images/works/work08.jpeg",
 
-  ],
+    video: "/videos/works/work08.mp4",
 
-  poster: "/images/works/work09.jpeg",
+    previewStart: 17,
 
-  video: "/videos/works/work09.mp4",
+    previewEnd: 32,
 
-  previewStart: 15,
-
-  previewEnd: 30,
-
-},
+  },
 
   {
 
-  id: 10,
+    id: 9,
 
-  title: "Irre",
+    title: "The Rose of Sharon Blooms Again",
 
-  year: 2021,
+    year: 2021,
 
-  medium: "Klanginstallation",
+    medium: "Videoinstallation",
 
-  venue: 'Ausstellung "EXPERIMANCE FESTIVAL", Gallery Haus, Saarbrücken',
+    venue: "Saarbrücken",
 
-  text: `irre, irre, irre, unsere Irre Leere.`,
+    text: `Beeinflussen wir uns wirklich gegenseitig?`,
 
-  materials: [
+    materials: [
 
-    "Leinwand",
+      "Videoprojektion",
 
-    "Piezo-Lautsprecher",
+      "Ton",
 
-    "Ton",
+    ],
 
-  ],
+    collaborators: [
 
-  collaborators: [],
+      "Juho Lee",
 
-  poster: "/images/works/work10.jpeg",
+    ],
 
-  video: "/videos/works/work10.mp4",
+    poster: "/images/works/work09.jpeg",
 
-  previewStart: 15,
+    video: "/videos/works/work09.mp4",
 
-  previewEnd: 30,
+    previewStart: 0,
 
-},
+    previewEnd: 15,
 
-{
+  },
 
-  id: 11,
+  {
 
-  title: "Entleeren",
+    id: 10,
 
-  year: 2021,
+    title: "Irre",
 
-  medium: "Videoinstallation",
+    year: 2021,
 
-  venue: 'Ausstellung "Sollbruchstellen", Kunsthochschule Mainz, Mainz',
+    medium: "Klanginstallation",
 
-  text: `Ich werfe jeden Tag etwas von mir ab.
+    venue: 'Ausstellung "EXPERIMANCE FESTIVAL", Gallery Haus, Saarbrücken',
+
+    text: `irre, irre, irre, unsere Irre Leere.`,
+
+    materials: [
+
+      "Leinwand",
+
+      "Piezo-Lautsprecher",
+
+      "Ton",
+
+    ],
+
+    collaborators: [],
+
+    poster: "/images/works/work10.jpeg",
+
+    video: "/videos/works/work10.mp4",
+
+    previewStart: 10,
+
+    previewEnd: 30,
+
+  },
+
+  {
+
+    id: 11,
+
+    title: "Entleeren",
+
+    year: 2021,
+
+    medium: "Videoinstallation",
+
+    venue: 'Ausstellung "Sollbruchstellen", Kunsthochschule Mainz, Mainz',
+
+    text: `Ich werfe jeden Tag etwas von mir ab.
 
 Wie wird man ein freier Mensch?`,
 
-  materials: [
+    materials: [
 
-    "Videoprojektion",
+      "Videoprojektion",
 
-    "Ton",
+      "Ton",
 
-  ],
+    ],
 
-  collaborators: [],
+    collaborators: [],
 
-  poster: "/images/works/work11.jpeg",
+    poster: "/images/works/work11.jpeg",
 
-  video: "/videos/works/work11.mp4",
+    video: "/videos/works/work11.mp4",
 
-  previewStart: 15,
+    previewStart: 30,
 
-  previewEnd: 30,
+    previewEnd: 45,
 
-},
+  },
 
   {
 
-  id: 12,
+    id: 12,
 
-  title: "Not to Become a Rotting Corpse",
+    title: "Not to Become a Rotting Corpse",
 
-  year: 2021,
+    year: 2021,
 
-  medium: "Videoinstallation",
+    medium: "Videoinstallation",
 
-  venue: "Saarbrücken",
+    venue: "Saarbrücken",
 
-  text: `Why should I keep flying?
+    text: `Why should I keep flying?
 
 Not to fall?
 
 Not to become a rotting corpse?`,
 
-  materials: [
+    materials: [
 
-    "Videoprojektion",
+      "Videoprojektion",
 
-    "Ton",
+      "Ton",
 
-  ],
+    ],
 
-  collaborators: [],
+    collaborators: [],
 
-  poster: "/images/works/work12.jpeg",
+    poster: "/images/works/work12.jpeg",
 
-  video: "/videos/works/work12.mp4",
+    video: "/videos/works/work12.mp4",
 
-  previewStart: 15,
+    previewStart: 270,
 
-  previewEnd: 30,
+    previewEnd: 312,
 
-},
+  },
 
-{
+  {
 
-  id: 13,
+    id: 13,
 
-  title: "Being-in-the-World",
+    title: "Being-in-the-World",
 
-  year: 2022,
+    year: 2022,
 
-  medium: "Video- und Soundinstallation",
+    medium: "Video- und Soundinstallation",
 
-  venue: "Weltkulturerbe Völklinger Hütte",
+    venue: "Weltkulturerbe Völklinger Hütte",
 
-  text: `Je genauer wir die Welt und uns selbst untersuchen, desto stärker wird unsere Angst.
+    text: `Je genauer wir die Welt und uns selbst untersuchen, desto stärker wird unsere Angst.
 
 „Existenz“ und „Welt“ gleichen einem Möbiusband – es gibt weder ein Innen noch ein Außen.
 
@@ -468,29 +468,67 @@ In dieser widersprüchlichen Struktur wird die Welt zu einem Ort ohne Orientieru
 
 Gibt es Existenzangst wegen der Welt, in der wir leben?`,
 
-  materials: [
+    materials: [
 
-    "Videoprojektion",
+      "Videoprojektion",
 
-    "Lautsprecher",
+      "Lautsprecher",
 
-    "Metallschalen",
+      "Metallschalen",
 
-    "Reis",
+      "Reis",
 
-  ],
+    ],
 
-  collaborators: [],
+    collaborators: [],
 
-  poster: "/images/works/work13.jpeg",
+    poster: "/images/works/work13.jpeg",
 
-  video: "/videos/works/work13.mp4",
+    video: "/videos/works/work13.mp4",
 
-  previewStart: 15,
+    previewStart: 100,
 
-  previewEnd: 30,
+    previewEnd: 9999,
 
-},
+  },
+
+  {
+
+    id: 14,
+
+    title: "Do You Want to Continue This Game? 4, 3, 2, 1...",
+
+    year: 2022,
+
+    medium: "Performance",
+
+    venue: "Uferstudios",
+
+    text: `“Do You Want to Continue This Game? 4, 3, 2, 1...” is a reflective performance that delves into the desire to escape the monotony of daily life.
+
+The piece contemplates how to find joy amidst repetitive habits and routines that shape our existence. This performance explores the metaphorical game of life, where we are handed roles and instructions by various contenders, such as parents, religion, government, or ourselves.
+
+The performance invites contemplation on whether to follow these instructions obediently, abandon the game, passively wait for it to end, or discover pleasure within its limitations. Through a symbolic representation of numbers 1 to 4, it examines the complexities of decision-making and the pursuit of fulfillment in life‘s intricate and often confining journey.
+
+During the premiere, the audience was invited to evaluate each performer and participate in real-time voting to eliminate one contestant from the game.`,
+
+    materials: [
+
+      "Choreography — Soomin Chae",
+
+    ],
+
+    collaborators: [],
+
+    poster: "",
+
+    video: "/videos/works/work14.mp4",
+
+    previewStart: 49,
+
+    previewEnd: 64,
+
+  },
 
 ];
 

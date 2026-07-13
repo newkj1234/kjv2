@@ -129,6 +129,15 @@ export default function WorkCard({ work, onClick, className = "" }) {
     }
   };
 
+  const handleEnded = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    seekPreviewStart(video);
+    if (hoveredRef.current) {
+      video.play().catch(() => {});
+    }
+  };
+
   return (
     <article
       className={`work-card ${hovered ? "hovered" : ""} ${className}`}
@@ -136,11 +145,13 @@ export default function WorkCard({ work, onClick, className = "" }) {
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
     >
-      <img
-        src={work.poster}
-        alt={work.title}
-        className={`work-poster ${videoLoaded ? "hide" : ""}`}
-      />
+      {work.poster && (
+        <img
+          src={work.poster}
+          alt={work.title}
+          className={`work-poster ${videoLoaded ? "hide" : ""}`}
+        />
+      )}
 
       <video
         ref={videoRef}
@@ -150,6 +161,7 @@ export default function WorkCard({ work, onClick, className = "" }) {
         playsInline
         preload="auto"
         onTimeUpdate={handleTimeUpdate}
+        onEnded={handleEnded}
       />
 
       <div className="work-title-overlay">

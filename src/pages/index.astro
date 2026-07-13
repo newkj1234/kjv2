@@ -1,14 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
-import Hero from "../components/Hero.astro";
 import WorksSection from "../components/WorksSection.jsx";
 ---
 
 <Layout>
   <Header />
   <main>
-    <Hero />
     <WorksSection client:load />
   </main>
 </Layout>

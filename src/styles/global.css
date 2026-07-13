@@ -139,16 +139,13 @@ button{
 
 }
 
-.menu-button:hover span:first-child{
-
-    top:8px;
-
-}
-
-.menu-button:hover span:last-child{
-
-    bottom:8px;
-
+@media (hover: hover) {
+    .menu-button:hover span:first-child{
+        top:8px;
+    }
+    .menu-button:hover span:last-child{
+        bottom:8px;
+    }
 }
 
 .menu-button.open span:first-child{
@@ -167,40 +164,19 @@ button{
 
 }
 
-.menu-button.open:hover span:first-child{
-
-    transform:rotate(0deg);
-
-}
-
-.menu-button.open:hover span:last-child{
-
-    transform:rotate(90deg);
-
+@media (hover: hover) {
+    .menu-button.open:hover span:first-child{
+        transform:rotate(0deg);
+    }
+    .menu-button.open:hover span:last-child{
+        transform:rotate(90deg);
+    }
 }
 
 
-.hero{
 
-    width:100%;
 
-    height:75vh;
 
-    overflow:hidden;
-
-}
-
-.hero-video{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-    display:block;
-
-}
 
 main{
 
@@ -392,12 +368,13 @@ main{
     transform:rotate(-45deg);
 }
 
-.menu-toggle:checked ~ header .menu-button:hover span:first-child{
-    transform:rotate(135deg);
-}
-
-.menu-toggle:checked ~ header .menu-button:hover span:last-child{
-    transform:rotate(-135deg);
+@media (hover: hover) {
+    .menu-toggle:checked ~ header .menu-button:hover span:first-child{
+        transform:rotate(135deg);
+    }
+    .menu-toggle:checked ~ header .menu-button:hover span:last-child{
+        transform:rotate(-135deg);
+    }
 }
 
 .menu-nav{
@@ -447,6 +424,12 @@ main{
     cursor:pointer;
 }
 
+.work-card.layout-hero-col {
+    grid-column: span 12;
+    height: 82vh;
+    aspect-ratio: auto;
+}
+
 .work-card.layout-3-col {
     grid-column: span 4;
     aspect-ratio: 16/9;
@@ -459,13 +442,19 @@ main{
 
 .work-card.layout-1-col-short {
     grid-column: span 12;
-    aspect-ratio: 3.5/1;
+    aspect-ratio: 2.4/1;
+}
+
+.work-card.layout-1-col-tall {
+    grid-column: span 12;
+    aspect-ratio: 2.0/1;
 }
 
 @media (max-width:900px){
     .work-card.layout-3-col,
     .work-card.layout-2-col,
-    .work-card.layout-1-col-short {
+    .work-card.layout-1-col-short,
+    .work-card.layout-1-col-tall {
         grid-column: span 12;
         aspect-ratio: 16/9;
     }
@@ -838,8 +827,8 @@ main{
 
 .close-button{
     position:absolute;
-    top:-80px;
-    right:16;
+    top:20px;
+    right:20px;
     width:42px;
     height:42px;
     display:flex;
@@ -854,11 +843,38 @@ main{
     transition:
         transform .3s ease,
         opacity .3s ease;
+    z-index:101;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 .close-button:hover{
     opacity:1;
-    transform:rotate(180deg) scale(1.08);
+    transform:rotate(180deg) scale(1.1);
+    color:transparent;
+    background: linear-gradient(90deg,
+        rgba(71, 120, 255, 1) 0%,
+        rgba(39, 201, 255, 1) 20%,
+        rgba(179, 88, 255, 1) 45%,
+        rgba(255, 126, 223, 1) 65%,
+        rgba(255, 255, 255, 1) 80%,
+        rgba(95, 188, 255, 1) 100%
+    );
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    animation:gradient-wave 1.2s ease infinite;
+}
+
+@media (max-width:900px){
+    .close-button{
+        top:12px;
+        right:12px;
+        font-size:24px;
+        width:36px;
+        height:36px;
+    }
 }
 
 .works-scene{
@@ -893,5 +909,152 @@ body::-webkit-scrollbar{
 
     opacity:0;
 
+}
+
+/* Works List Page Styles */
+.works-page-list {
+    width: 100%;
+    padding: 100px 0;
+}
+.works-list-item {
+    margin-bottom: 120px;
+    width: 100%;
+}
+.works-list-header {
+    padding: 0 5%;
+    margin-bottom: 24px;
+}
+.works-list-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 8px;
+    letter-spacing: -0.02em;
+}
+.works-list-year {
+    font-size: 1.25rem;
+    opacity: 0.6;
+    font-weight: 400;
+}
+.works-media-scroll {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin: 30px 0;
+    scrollbar-width: none; /* Hide scrollbar for clean look */
+}
+.works-media-scroll::-webkit-scrollbar {
+    display: none;
+}
+.works-media-track {
+    display: flex;
+    gap: 24px;
+    padding: 0 5%;
+}
+.works-video-wrapper {
+    position: relative;
+    height: 420px;
+    aspect-ratio: 16/9;
+    flex-shrink: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.works-loop-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.works-video-wrapper:hover .works-loop-video {
+    transform: scale(1.03);
+}
+.works-video-play-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.works-video-wrapper:hover .works-video-play-overlay {
+    opacity: 1;
+}
+.play-icon {
+    font-size: 2rem;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding-left: 4px;
+}
+.works-screenshot {
+    height: 420px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.5s ease;
+}
+.works-screenshot:hover {
+    transform: scale(1.02);
+}
+.works-list-desc {
+    width: 100%;
+    max-width: 800px;
+    margin: 40px auto 0;
+    padding-left: 12%; /* offsets it from the center slightly to the left! */
+    box-sizing: border-box;
+}
+.works-list-text {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: rgba(255, 255, 255, 0.88);
+    white-space: pre-line;
+    margin-bottom: 24px;
+}
+.works-list-materials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    opacity: 0.65;
+    font-size: 0.95rem;
+}
+
+/* Video Only Modal Override */
+.project-content.video-only {
+    margin: auto;
+    width: min(1000px, 90vw);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+@media (max-width: 900px) {
+    .works-list-header {
+        padding: 0 24px;
+        margin-top: 40px;
+    }
+    .works-list-title {
+        font-size: 2rem;
+    }
+    .works-video-wrapper,
+    .works-screenshot {
+        height: 260px;
+    }
+    .works-media-track {
+        padding: 0 24px;
+    }
+    .works-list-desc {
+        padding-left: 24px;
+        padding-right: 24px;
+        margin-top: 20px;
+        margin-bottom: 60px;
+    }
 }
 

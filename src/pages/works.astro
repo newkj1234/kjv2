@@ -1,0 +1,67 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import WorksList from "../components/WorksList.jsx";
+import works from "../data/works.js";
+
+const videoSrc = "/videos/works/work13.mp4";
+---
+
+<Layout>
+  <Header />
+  
+  <div class="cv-page">
+    <video
+      class="cv-bg-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+    >
+      <source src={`${videoSrc}#t=20`} type="video/mp4" />
+    </video>
+    <div class="cv-overlay"></div>
+
+    <main class="cv-container">
+      <WorksList client:load works={works} />
+    </main>
+  </div>
+</Layout>
+
+<style>
+  .cv-page {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    color: #fff;
+    overflow-x: hidden;
+  }
+
+  .cv-bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -2;
+    opacity: 0.18;
+    filter: grayscale(100%);
+  }
+
+  .cv-overlay {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.8) 100%);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .cv-container {
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding-top: 72px;
+  }
+</style>

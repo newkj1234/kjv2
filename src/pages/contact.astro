@@ -483,4 +483,18 @@ const email = "rudwo9312@gmail.com";
       handleTimeStart();
     }
   }
+
+  // Handle URL query parameters to auto-open accordions (DSGVO 2-click compliance)
+  const urlParams = new URLSearchParams(window.location.search);
+  const openParam = urlParams.get("open");
+  if (openParam === "imprint" || openParam === "privacy") {
+    const details = document.querySelectorAll(".contact-details");
+    if (openParam === "privacy" && details[0] instanceof HTMLDetailsElement) {
+      details[0].open = true;
+      details[0].scrollIntoView({ behavior: "smooth" });
+    } else if (openParam === "imprint" && details[1] instanceof HTMLDetailsElement) {
+      details[1].open = true;
+      details[1].scrollIntoView({ behavior: "smooth" });
+    }
+  }
 </script>

@@ -34,7 +34,7 @@ const videoSrc = "/videos/works/work13.mp4";
             <p class="pub-subtitle">Bachelorarbeit in freier Kunst</p>
           </header>
           <div class="pub-grid cols-3">
-            <div class="pub-image-wrapper">
+            <div class="pub-image-wrapper" style="aspect-ratio: 1191/842;">
               <img
                 src="/publication/BA/BA1.png"
                 alt="Being-in-the-World - Bachelorarbeit 1"
@@ -42,7 +42,7 @@ const videoSrc = "/videos/works/work13.mp4";
                 loading="lazy"
               />
             </div>
-            <div class="pub-image-wrapper">
+            <div class="pub-image-wrapper" style="aspect-ratio: 1191/842;">
               <img
                 src="/publication/BA/BA2.png"
                 alt="Being-in-the-World - Bachelorarbeit 2"
@@ -50,7 +50,7 @@ const videoSrc = "/videos/works/work13.mp4";
                 loading="lazy"
               />
             </div>
-            <div class="pub-image-wrapper">
+            <div class="pub-image-wrapper" style="aspect-ratio: 1191/842;">
               <img
                 src="/publication/BA/BA3.png"
                 alt="Being-in-the-World - Bachelorarbeit 3"
@@ -68,7 +68,7 @@ const videoSrc = "/videos/works/work13.mp4";
             <p class="pub-subtitle">서울문화재단, 문래예술공장</p>
           </header>
           <div class="pub-grid cols-4">
-            <div class="pub-image-wrapper">
+            <div class="pub-image-wrapper" style="aspect-ratio: 1036/735;">
               <img
                 src="/publication/MU/MU1.png"
                 alt="Das Netzwerk der Klangkunst - 문래예술공장 1"
@@ -76,7 +76,7 @@ const videoSrc = "/videos/works/work13.mp4";
                 loading="lazy"
               />
             </div>
-            <div class="pub-image-wrapper">
+            <div class="pub-image-wrapper" style="aspect-ratio: 909/736;">
               <img
                 src="/publication/MU/MU2.png"
                 alt="Das Netzwerk der Klangkunst - 문래예술공장 2"
@@ -84,7 +84,7 @@ const videoSrc = "/videos/works/work13.mp4";
                 loading="lazy"
               />
             </div>
-            <div class="pub-image-wrapper">
+            <div class="pub-image-wrapper" style="aspect-ratio: 5000/3337;">
               <img
                 src="/publication/MU/MU3.jpg"
                 alt="Das Netzwerk der Klangkunst - 문래예술공장 3"
@@ -92,7 +92,7 @@ const videoSrc = "/videos/works/work13.mp4";
                 loading="lazy"
               />
             </div>
-            <div class="pub-image-wrapper">
+            <div class="pub-image-wrapper" style="aspect-ratio: 5000/3337;">
               <img
                 src="/publication/MU/MU4.jpg"
                 alt="Das Netzwerk der Klangkunst - 문래예술공장 4"
@@ -208,24 +208,42 @@ const videoSrc = "/videos/works/work13.mp4";
     font-weight: 300;
   }
 
-  /* Responsive image grid */
+  /* Responsive image grid / flex scroll */
   .pub-grid {
-    display: grid;
+    display: flex;
+    flex-wrap: nowrap;
     gap: 16px;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 12px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+    -webkit-overflow-scrolling: touch;
   }
 
-  .pub-grid.cols-3 {
-    grid-template-columns: repeat(3, 1fr);
+  .pub-grid::-webkit-scrollbar {
+    height: 4px;
   }
 
-  .pub-grid.cols-4 {
-    grid-template-columns: repeat(4, 1fr);
+  .pub-grid::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .pub-grid::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 2px;
+  }
+
+  .pub-grid::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
   }
 
   .pub-image-wrapper {
     position: relative;
     overflow: hidden;
-    aspect-ratio: 4/5;
+    height: 380px;
+    flex-shrink: 0;
     background: rgba(255, 255, 255, 0.03);
     cursor: zoom-in;
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -312,26 +330,13 @@ const videoSrc = "/videos/works/work13.mp4";
     transform: scale(1.1);
   }
 
-  /* Responsive breakpoints */
-  @media (max-width: 868px) {
-    .pub-grid.cols-3,
-    .pub-grid.cols-4 {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
   @media (max-width: 640px) {
     .pub-container {
       padding: 100px 24px 60px;
     }
-
-    .pub-grid.cols-3,
-    .pub-grid.cols-4 {
-      grid-template-columns: 1fr;
-    }
     
     .pub-image-wrapper {
-      aspect-ratio: 3/4;
+      height: 280px;
     }
 
     .lightbox-close {
